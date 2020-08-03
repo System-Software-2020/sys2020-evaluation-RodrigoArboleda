@@ -14,7 +14,9 @@
 
  2) Create a minimal equivalent program ex1.c.
 
- 4) Create a library libex2.so implementing the function defined in ex2.c.
+ 3) Reimplement ex1.asm's 'write' in a program ex2 (either in c or or asembly).
+
+ 4) Create a library libex2.so out ex2 (ex2.c or ex2.asm).
 
  5) Modify ex1.c to call the function implemented by libex2.so.
 
