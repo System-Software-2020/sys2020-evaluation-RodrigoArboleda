@@ -36,9 +36,9 @@ write:
         push ebp    
         push ebx            
         mov ebp, esp
-        mov ebx, [esp+8]                 
-        mov ecx, [esp+12]                 
-        mov edx, [esp+16]                 
+        mov ebx, [esp+12]                 
+        mov ecx, [esp+16]                 
+        mov edx, [esp+20]                 
         mov eax, 4              
         int 0x80                
         mov esp, ebp            
