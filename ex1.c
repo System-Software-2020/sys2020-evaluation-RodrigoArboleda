@@ -1,9 +1,8 @@
-#include <unistd.h>
+#include ex2.h
 
-char p1[3] = "Hel";
-char p2[3] = "lo\n";
+char p1[6] = "Hello\n";
 
 int main(){
-    write(1, p1, 6);
+    write2(1, p1, 6);
     return 0;
 }
