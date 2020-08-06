@@ -26,15 +26,15 @@ $(lib): $(lib:lib%.so=%.o)
 install: $(bin) $(lib) $(lib:lib%.so=%.h)
 	mkdir -p $(PREFIX)/bin && cp $(bin) $(PREFIX)/bin/$(bin)
 	mkdir -p $(PREFIX)/lib && cp $(lib) $(PREFIX)/lib/$(lib)
-	mkdir -p $(PREFIX)/include && cp $(lib:lib%.a=%.h) $(PREFIX)/include/$(lib:lib%.a=%.h)
+	mkdir -p $(PREFIX)/include && cp $(lib:lib%.so=%.h) $(PREFIX)/include/$(lib:lib%.so=%.h)
 
 
 uninstall:
 	rm $(PREFIX)/bin/$(bin)
 	rm $(PREFIX)/lib/$(lib)
-	rm $(PREFIX)/include/$(lib:lib%.a=%.h)
+	rm $(PREFIX)/include/$(lib:lib%.so=%.h)
 
 .PHONY: clean
 
 clean:
-	rm -f $(bin) $(obj) $(lib)
+	rm -f $(bin) $(obj) $(lib) $(lib:lib%.so)
