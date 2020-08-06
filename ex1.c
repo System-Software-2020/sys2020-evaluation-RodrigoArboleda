@@ -1,4 +1,4 @@
-#include ex2.h
+#include "ex2.h"
 
 char p1[6] = "Hello\n";
 
