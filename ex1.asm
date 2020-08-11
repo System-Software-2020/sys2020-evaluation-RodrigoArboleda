@@ -26,20 +26,22 @@ main:
         push p1
         push 1
         call write
-        add esp, 8
+        add esp, 12
         mov eax, 0              
         mov esp, ebp            
         pop ebp
         ret                  
 
 write:
-        push ebp                
+        push ebp    
+        push ebx            
         mov ebp, esp
-        mov ebx, [esp+8]                 
-        mov ecx, [esp+12]                 
-        mov edx, [esp+16]                 
+        mov ebx, [esp+12]                 
+        mov ecx, [esp+16]                 
+        mov edx, [esp+20]                 
         mov eax, 4              
         int 0x80                
         mov esp, ebp            
+        pop ebx
         pop ebp
         ret
