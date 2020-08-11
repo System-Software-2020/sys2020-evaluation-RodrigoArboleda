@@ -37,4 +37,4 @@ uninstall:
 .PHONY: clean
 
 clean:
-	rm -f $(bin) $(obj) $(lib) $(lib:lib%.so)
+	rm -f $(bin) $(obj) $(lib) $(lib:lib%.so=%.o)
