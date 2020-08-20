@@ -13,7 +13,8 @@ all: $(bin)
 
 
 $(bin): $(obj) $(lib)
-	$(CC) $(CPP_FLAGS) $(C_FLAGS) $(C_FLAGS_BIN) $(obj) -l$(lib:lib%.so=%) -o $(bin) 
+	$(CC) $(CPP_FLAGS) $(C_FLAGS) $(C_FLAGS_BIN) $(obj) -l$(lib:lib%.so=%) \
+	-Wl,-rpath='$$ORIGIN' -Wl,-rpath='$$ORIGIN/../lib'  -o $(bin) 
 
 
 $(lib): $(lib:lib%.so=%.o)
